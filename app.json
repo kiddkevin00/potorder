@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Pot Order",
+    "slug": "potorder",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.markutilitylabs.potorder",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.markutilitylabs.potorder",
+      "versionCode": 1
+    }
+  }
+}
