@@ -148,18 +148,25 @@ export default function App() {
   }, [score]);
 
   const loseLife = useCallback(() => {
-    setLives((l) => {
-      const next = l - 1;
-      if (next <= 0) {
-        // schedule endGame on next tick so state has settled
-        setTimeout(endGame, 0);
-        return 0;
-      }
-      tick('warning');
-      return next;
-    });
+    // Pure updater — defer side effects to the effect below so React can
+    // safely replay this under StrictMode / concurrent rendering.
+    setLives((l) => Math.max(0, l - 1));
     setCombo(0);
-  }, [endGame, tick]);
+  }, []);
+
+  // React to lives going to zero (or warn the player on each loss).
+  // Putting this in an effect keeps the state updaters above pure.
+  const prevLivesRef = useRef(MAX_LIVES);
+  useEffect(() => {
+    if (lives < prevLivesRef.current) {
+      if (lives <= 0) {
+        endGame();
+      } else {
+        tick('warning');
+      }
+    }
+    prevLivesRef.current = lives;
+  }, [lives, endGame, tick]);
 
   const rollRequest = useCallback(() => {
     // pick something different from current; prefer items currently on belt
@@ -250,58 +257,59 @@ export default function App() {
     (item: Item) => {
       if (sceneRef.current !== 'playing' || item.consumed) return;
       const matched = item.food === requestRef.current;
-      // Stop the slide animation in place; mark consumed so the end
-      // callback doesn't fire a miss too.
-      item.x.stopAnimation();
-      const consumedItem = { ...item, consumed: true };
-      setItems((prev) =>
-        prev.map((p) => (p.id === item.id ? consumedItem : p)).filter((p) => !(p.id === item.id && !matched)),
-      );
 
-      if (matched) {
-        // Fly into pot
-        Animated.parallel([
+      // Capture the current slide position via the documented callback,
+      // not the internal `._value`. Mark the item consumed in state so the
+      // slide-off completion handler can't double-fire as a miss.
+      item.x.stopAnimation((currentX: number) => {
+        setItems((prev) =>
+          prev.map((p) => (p.id === item.id ? { ...p, consumed: true } : p)),
+        );
+
+        if (matched) {
           Animated.timing(item.x, {
             toValue: SCREEN_W / 2 - ITEM_SIZE / 2,
             duration: 260,
             easing: Easing.out(Easing.cubic),
             useNativeDriver: true,
-          }),
-        ]).start(() => {
-          setItems((prev) => prev.filter((p) => p.id !== item.id));
-        });
+          }).start(() => {
+            setItems((prev) => prev.filter((p) => p.id !== item.id));
+          });
+        } else {
+          // Bounce in place from the actual current position, then drop.
+          Animated.sequence([
+            Animated.timing(item.x, {
+              toValue: currentX - 24,
+              duration: 80,
+              useNativeDriver: true,
+            }),
+            Animated.timing(item.x, {
+              toValue: currentX,
+              duration: 120,
+              useNativeDriver: true,
+            }),
+          ]).start(() => {
+            setItems((prev) => prev.filter((p) => p.id !== item.id));
+          });
+        }
+      });
+
+      if (matched) {
+        const newCombo = combo + 1;
         const points = (feverRef.current ? 2 : 1) * (1 + Math.floor(combo / 5));
         setScore((s) => s + points);
-        setCombo((c) => {
-          const next = c + 1;
-          setBestCombo((b) => Math.max(b, next));
-          if (!feverRef.current && next > 0 && next % FEVER_REQUIRED_COMBO === 0) {
-            enterFever();
-          }
-          return next;
-        });
+        setCombo(newCombo);
+        if (newCombo > bestCombo) setBestCombo(newCombo);
+        if (!feverRef.current && newCombo > 0 && newCombo % FEVER_REQUIRED_COMBO === 0) {
+          enterFever();
+        }
         tick(feverRef.current ? 'success' : 'light');
         rollRequest();
       } else {
-        // Wrong item — bounce and drop, lose a life
-        Animated.sequence([
-          Animated.timing(item.x, {
-            toValue: (item.x as any)._value - 24,
-            duration: 80,
-            useNativeDriver: true,
-          }),
-          Animated.timing(item.x, {
-            toValue: (item.x as any)._value,
-            duration: 120,
-            useNativeDriver: true,
-          }),
-        ]).start(() => {
-          setItems((prev) => prev.filter((p) => p.id !== item.id));
-        });
         loseLife();
       }
     },
-    [combo, enterFever, loseLife, rollRequest, tick],
+    [combo, bestCombo, enterFever, loseLife, rollRequest, tick],
   );
 
   useEffect(() => {
