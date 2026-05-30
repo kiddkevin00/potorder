@@ -137,6 +137,41 @@ a:hover { color: var(--accent-deep); text-decoration-color: currentColor; }
 .contact-card p { font-size: 15px; color: var(--ink-muted); line-height: 1.55; }
 .contact-card .link-row { margin-top: 14px; font-family: var(--mono); font-size: 13px; word-break: break-all; }
 
+.shots { margin: 0 0 96px; }
+.shots-eyebrow {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-subtle); margin-bottom: 18px;
+}
+.shots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.shot { margin: 0; }
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  background: #1a0e0c;
+  box-shadow:
+    0 1px 2px rgba(26, 24, 21, 0.06),
+    0 18px 38px -16px rgba(26, 24, 21, 0.28);
+  border: 1px solid var(--rule);
+}
+.shot figcaption {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  padding: 0 4px;
+  font-variation-settings: "opsz" 16;
+}
+
 .colophon { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--rule-soft); display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .colophon-left { font-family: var(--serif); font-size: 15px; color: var(--ink); display: flex; align-items: center; gap: 10px; }
 .colophon-left em { font-style: italic; color: var(--accent); }
