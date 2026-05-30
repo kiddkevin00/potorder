@@ -1,119 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pot Order — Support</title>
-  <meta name="description" content="Support and FAQ for Pot Order." />
-  <meta name="theme-color" content="#f7f4ec" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pot Order — Cook on the clock.</title>
+<meta name="description" content="A single-screen reflex puzzle for iPhone. The pot calls out an ingredient — tap the matching item before it slides off the belt. No ads, no IAP, no signup." />
+<meta name="theme-color" content="#1a0e0c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
 </head>
 <body>
 <div class="page">
+  <header class="topnav">
+  <a class="brand" href="./" aria-label="Pot Order home">
+    <span class="mark">PO</span>
+    Pot Order
+    <span class="version">v1.0.0</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary"><a href="#features" aria-current="page">Features</a><a href="#howtoplay">How to play</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="https://github.com/kiddkevin00/potorder" rel="noopener" target="_blank">GitHub</a></nav>
+</header>
 
-  <header class="masthead">
-    <a class="wordmark" href="./" aria-label="Pot Order home">
-      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
-  <rect x="3.2" y="3.2" width="13" height="15.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-  <rect x="7.8" y="7.8" width="13" height="15.5" rx="1.6" fill="var(--paper)" stroke="currentColor" stroke-width="1.5"/>
-</svg>
-      Pot <em>Order</em>
-    </a>
-    <nav class="topnav" aria-label="Primary">
-      <a href="./" aria-current="page">Support</a><a href="privacy.html">Privacy</a><a href="https://github.com/kiddkevin00/potorder">GitHub</a>
-    </nav>
-  </header>
-
-  <section class="mast" aria-labelledby="mast-title">
-    <p class="eyebrow">Support<span class="dot"></span>The manual</p>
-    <h1 class="display" id="mast-title">
-      Pot<br>
-      <em>Order<span class="punct">.</span></em>
-    </h1>
-    <div class="mast-rule" aria-hidden="true"></div>
-    <p class="lede">A small one-thumb cooking puzzle for iPhone. The pot calls out an ingredient, you tap the matching item before it slides off the belt — <em>no ads, no in-app purchases, no signup.</em></p>
-    <p class="meta">v1.0.0<span class="sep">·</span>iPhone · iOS 16+</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="hero-eyebrow"><span class="beta-badge">Now in beta · iOS via Expo Go</span></p>
+    <h1 id="hero-title">Cook on the clock.</h1>
+    <p class="lede">A single-screen reflex puzzle for iPhone. The pot calls out an ingredient — tap the matching item before it slides off the belt. No ads, no IAP, no signup.</p>
+    <div class="cta-row">
+      <a class="cta-primary" href="https://github.com/kiddkevin00/potorder" rel="noopener" target="_blank">★ Star on GitHub</a>
+      <a class="cta-secondary" href="#howtoplay">How it works →</a>
+    </div>
+    <p class="trust-row"><span>Offline</span><span>No ads</span><span>No IAP</span><span>Open source</span></p>
   </section>
 
-  <section class="shots" aria-label="Screenshots">
-    <p class="shots-eyebrow">Look inside</p>
-    <div class="shots-grid">
-      <figure class="shot">
-        <img src="screenshots/01-gameplay.png" alt="Pot Order — opening round. Pot at top requests a dumpling; conveyor at the bottom carries four dumplings and a steak across the screen." loading="lazy" />
-        <figcaption>A new round opens. The pot orders one ingredient; matching items slide into view from the right.</figcaption>
-      </figure>
-      <figure class="shot">
-        <img src="screenshots/04-played.png" alt="Pot Order — mid-game with score 11, combo ×8, two lives remaining, and a varied conveyor of vegetables and seafood." loading="lazy" />
-        <figcaption>Eight matches in. The combo multiplier (×8) has just unlocked Fever mode — two-times scoring for six seconds.</figcaption>
-      </figure>
+  <section id="features" aria-labelledby="features-h">
+    <p class="eyebrow">Features</p>
+    <h2 id="features-h">What's in the build</h2>
+    <p class="subhead">The whole feature set, plainly listed — no upsells gating the basics.</p>
+    <div class="feature-grid">
+      <article class="feature-card"><span class="feature-icon">◉</span><h3>One core loop</h3><p>Pot orders an ingredient → tap the matching item on the belt → score. Repeat until three misses end the round.</p></article>
+      <article class="feature-card"><span class="feature-icon">×</span><h3>Combo multiplier</h3><p>Consecutive correct matches build a multiplier (×2, ×3, …) that scales your points up.</p></article>
+      <article class="feature-card"><span class="feature-icon">✦</span><h3>Fever mode</h3><p>Hit an 8-combo and every match doubles for six seconds. Chain another 8 to refresh it.</p></article>
+      <article class="feature-card"><span class="feature-icon">⏵</span><h3>Belt speeds up</h3><p>As your score climbs, the conveyor travel time scales down. Late game is genuinely tight.</p></article>
+      <article class="feature-card"><span class="feature-icon">◷</span><h3>High score saved</h3><p>Your best run is persisted locally. No leaderboard server, no friend compare.</p></article>
+      <article class="feature-card"><span class="feature-icon">⊘</span><h3>No banners</h3><p>No interstitials. No 'watch ad to continue'. The 25-line credits are at the bottom of the source on GitHub.</p></article>
     </div>
   </section>
 
-  <main>
+  <section id="howtoplay" aria-labelledby="howto-h">
+    <p class="eyebrow">How to play</p>
+    <h2 id="howto-h">From cold-start to good-at-it</h2>
+    <p class="subhead">A few short steps. The app gets out of your way after that.</p>
+    <div class="steps-grid">
+      <article class="step-card"><span class="step-num">01</span><h3>Watch the pot</h3><p>The pot at the top shows one ingredient at a time — that's the active order.</p></article>
+      <article class="step-card"><span class="step-num">02</span><h3>Watch the belt</h3><p>Items ride the conveyor across the bottom. They slide off the left edge on a timer.</p></article>
+      <article class="step-card"><span class="step-num">03</span><h3>Tap matching items</h3><p>Tap the ingredient that matches the order. Tap wrong and you lose a life; tap right and combo bumps.</p></article>
+      <article class="step-card"><span class="step-num">04</span><h3>Hit combo 8 for Fever</h3><p>Eight matches in a row triggers Fever — six seconds of double scoring. Chain another 8 to refresh.</p></article>
+    </div>
+  </section>
 
-    <article class="doc">
-      <aside class="doc-num" aria-hidden="true">01</aside>
-      <section class="doc-body">
-        <p class="doc-eyebrow">Overview</p>
-        <h2>How it works</h2>
-        <p>A single-screen reflex puzzle. The pot at the top of the screen orders one ingredient at a time. Ingredients ride a conveyor belt across the bottom — tap the one that matches the order before it slides off the edge.</p><ul><li>Three misses ends the round.</li><li>Consecutive correct matches build a combo (×2, ×3, …) that multiplies your points.</li><li>Hit a combo of eight and you trigger <strong>Fever</strong> — every match counts double for six seconds.</li><li>The conveyor speeds up the higher your score climbs.</li></ul>
-      </section>
-    </article>
-
-    <article class="doc">
-      <aside class="doc-num" aria-hidden="true">02</aside>
-      <section class="doc-body">
-        <p class="doc-eyebrow">Differences from the usual</p>
-        <h2>What's not in this app</h2>
-        <p>No advertising. No in-app purchases. No coin shop, no energy meter, no daily-login reward, no leaderboard server. The only thing saved is your local high score — once, on your device.</p>
-      </section>
-    </article>
-
-    <article class="doc">
-      <aside class="doc-num" aria-hidden="true">03</aside>
-      <section class="doc-body">
-        <p class="doc-eyebrow">Settings</p>
-        <h2>Can I turn off haptics?</h2>
-        <p>Yes. The toggle is on the start screen below the <strong>Start cooking</strong> button. It persists across launches.</p>
-      </section>
-    </article>
-
-    <article class="doc">
-      <aside class="doc-num" aria-hidden="true">04</aside>
-      <section class="doc-body">
-        <p class="doc-eyebrow">Visuals</p>
-        <h2>Why emoji instead of illustrated art?</h2>
-        <p>This is a minimum-viable build. Emoji ship with iOS, render crisply at every size, and avoid licensing custom artwork for an indie release. A future version may swap in custom illustrations; the mechanics will stay the same.</p>
-      </section>
-    </article>
-
-  </main>
-
-  <aside class="contact-card">
-    <p class="eyebrow">Card<span class="dot"></span>No. 01</p>
-    <h3>Need help, or want to <em>report a bug</em>?</h3>
-    <p>Open an issue on GitHub. There's no support email — issues are the canonical channel and they're public, which keeps everything honest.</p>
-    <p class="link-row"><a href="https://github.com/kiddkevin00/potorder/issues">github.com/kiddkevin00/potorder/issues</a></p>
-  </aside>
+  <section id="screenshots" aria-labelledby="shots-h">
+    <p class="eyebrow">Screenshots</p>
+    <h2 id="shots-h">What it looks like on a phone</h2>
+    <p class="subhead">Captured from the running app at iPhone 14 viewport.</p>
+    <div class="shots-grid"><figure class="shot-card"><img src="screenshots/01-gameplay.png" alt="Opening round — full belt, order bubble visible. screenshot" loading="lazy" /><figcaption class="shot-caption"><span class="n">01</span><span>Opening round — full belt, order bubble visible.</span></figcaption></figure><figure class="shot-card"><img src="screenshots/04-played.png" alt="Eight matches in — combo ×8, Fever just triggered. screenshot" loading="lazy" /><figcaption class="shot-caption"><span class="n">02</span><span>Eight matches in — combo ×8, Fever just triggered.</span></figcaption></figure></div>
+  </section>
 
   <footer class="colophon">
-    <div class="colophon-left">
-      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
-  <rect x="3.2" y="3.2" width="13" height="15.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-  <rect x="7.8" y="7.8" width="13" height="15.5" rx="1.6" fill="var(--paper)" stroke="currentColor" stroke-width="1.5"/>
-</svg>
-      Pot <em>Order</em> · Mark Utility Labs
-    </div>
-    <nav class="colophon-meta" aria-label="Footer">
-      <a href="privacy.html">Privacy</a>
-      <a href="https://github.com/kiddkevin00/potorder">Source</a>
-      <a href="https://github.com/kiddkevin00/potorder/issues">Issues</a>
-    </nav>
-  </footer>
-
+  <span class="credit">© Mark Utility Labs · Made with care.</span>
+  <nav class="colophon-links" aria-label="Footer">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/kiddkevin00/potorder" rel="noopener" target="_blank">GitHub</a>
+  </nav>
+</footer>
 </div>
 </body>
 </html>
