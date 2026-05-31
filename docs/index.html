@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pot Order — Cook on the clock.</title>
-<meta name="description" content="A single-screen reflex puzzle for iPhone. The pot calls out an ingredient — tap the matching item before it slides off the belt. No ads, no IAP, no signup." />
+<meta name="description" content="A one-thumb cooking puzzle for iPhone. The pot calls out an ingredient — tap the matching item on the belt before it slides off. No ads, no IAP, no banners." />
 <meta name="theme-color" content="#1a0e0c" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="app.css" />
@@ -23,12 +23,12 @@
   <section class="hero" aria-labelledby="hero-title">
     <p class="hero-eyebrow"><span class="beta-badge">Now in beta · iOS via Expo Go</span></p>
     <h1 id="hero-title">Cook on the clock.</h1>
-    <p class="lede">A single-screen reflex puzzle for iPhone. The pot calls out an ingredient — tap the matching item before it slides off the belt. No ads, no IAP, no signup.</p>
+    <p class="lede">A one-thumb cooking puzzle for iPhone. The pot calls out an ingredient — tap the matching item on the belt before it slides off. No ads, no IAP, no banners.</p>
     <div class="cta-row">
       <a class="cta-primary" href="https://github.com/kiddkevin00/potorder" rel="noopener" target="_blank">★ Star on GitHub</a>
       <a class="cta-secondary" href="#howtoplay">How it works →</a>
     </div>
-    <p class="trust-row"><span>Offline</span><span>No ads</span><span>No IAP</span><span>Open source</span></p>
+    <p class="trust-row"><span>Offline-first</span><span>No ads</span><span>No IAP</span><span>Open source</span></p>
   </section>
 
   <section id="features" aria-labelledby="features-h">
@@ -36,12 +36,12 @@
     <h2 id="features-h">What's in the build</h2>
     <p class="subhead">The whole feature set, plainly listed — no upsells gating the basics.</p>
     <div class="feature-grid">
-      <article class="feature-card"><span class="feature-icon">◉</span><h3>One core loop</h3><p>Pot orders an ingredient → tap the matching item on the belt → score. Repeat until three misses end the round.</p></article>
-      <article class="feature-card"><span class="feature-icon">×</span><h3>Combo multiplier</h3><p>Consecutive correct matches build a multiplier (×2, ×3, …) that scales your points up.</p></article>
-      <article class="feature-card"><span class="feature-icon">✦</span><h3>Fever mode</h3><p>Hit an 8-combo and every match doubles for six seconds. Chain another 8 to refresh it.</p></article>
-      <article class="feature-card"><span class="feature-icon">⏵</span><h3>Belt speeds up</h3><p>As your score climbs, the conveyor travel time scales down. Late game is genuinely tight.</p></article>
-      <article class="feature-card"><span class="feature-icon">◷</span><h3>High score saved</h3><p>Your best run is persisted locally. No leaderboard server, no friend compare.</p></article>
-      <article class="feature-card"><span class="feature-icon">⊘</span><h3>No banners</h3><p>No interstitials. No 'watch ad to continue'. The 25-line credits are at the bottom of the source on GitHub.</p></article>
+      <article class="feature-card"><span class="feature-icon">▶</span><h3>One-thumb reflex</h3><p>Tap-only. No swipe, no drag, no menus mid-game. The whole loop is order → see → tap.</p></article>
+      <article class="feature-card"><span class="feature-icon">✱</span><h3>Combo multiplier</h3><p>Consecutive correct matches build a combo. Every five matches in a row bumps the point value of each subsequent match.</p></article>
+      <article class="feature-card"><span class="feature-icon">★</span><h3>Fever mode</h3><p>Hit a combo of eight and Fever activates — every match doubles for six seconds. The pot glows accent-color while it's live.</p></article>
+      <article class="feature-card"><span class="feature-icon">⏱</span><h3>Belt speeds up</h3><p>The conveyor's travel time shortens as your score grows. Spawn rate tightens too. The early game gives you room; the late game doesn't.</p></article>
+      <article class="feature-card"><span class="feature-icon">♥</span><h3>Three strikes</h3><p>Three misses end the round. The wrong-tap bounce and the slide-off-the-edge both count.</p></article>
+      <article class="feature-card"><span class="feature-icon">✦</span><h3>Local high score only</h3><p>Best score lives on this device. No leaderboard server, no account, no telemetry, no IAP.</p></article>
     </div>
   </section>
 
@@ -50,10 +50,11 @@
     <h2 id="howto-h">From cold-start to good-at-it</h2>
     <p class="subhead">A few short steps. The app gets out of your way after that.</p>
     <div class="steps-grid">
-      <article class="step-card"><span class="step-num">01</span><h3>Watch the pot</h3><p>The pot at the top shows one ingredient at a time — that's the active order.</p></article>
-      <article class="step-card"><span class="step-num">02</span><h3>Watch the belt</h3><p>Items ride the conveyor across the bottom. They slide off the left edge on a timer.</p></article>
-      <article class="step-card"><span class="step-num">03</span><h3>Tap matching items</h3><p>Tap the ingredient that matches the order. Tap wrong and you lose a life; tap right and combo bumps.</p></article>
-      <article class="step-card"><span class="step-num">04</span><h3>Hit combo 8 for Fever</h3><p>Eight matches in a row triggers Fever — six seconds of double scoring. Chain another 8 to refresh.</p></article>
+      <article class="step-card"><span class="step-num">01</span><h3>Tap Start cooking</h3><p>The menu sums up the rules in three lines. Tap Start cooking to enter the round.</p></article>
+      <article class="step-card"><span class="step-num">02</span><h3>Watch the order</h3><p>The pot at the top wears a speech bubble with the next ingredient. Order changes each match.</p></article>
+      <article class="step-card"><span class="step-num">03</span><h3>Tap the right item</h3><p>Belt items ride from right to left. Tap the one that matches the order before it falls off the edge.</p></article>
+      <article class="step-card"><span class="step-num">04</span><h3>Build the combo</h3><p>Five consecutive correct matches starts the multiplier; eight triggers Fever (2× scoring for six seconds).</p></article>
+      <article class="step-card"><span class="step-num">05</span><h3>Don't miss three times</h3><p>Wrong tap or a matching item that slid off both count. Three misses ends the round.</p></article>
     </div>
   </section>
 
@@ -61,7 +62,7 @@
     <p class="eyebrow">Screenshots</p>
     <h2 id="shots-h">What it looks like on a phone</h2>
     <p class="subhead">Captured from the running app at iPhone 14 viewport.</p>
-    <div class="shots-grid"><figure class="shot-card"><img src="screenshots/01-gameplay.png" alt="Opening round — full belt, order bubble visible. screenshot" loading="lazy" /><figcaption class="shot-caption"><span class="n">01</span><span>Opening round — full belt, order bubble visible.</span></figcaption></figure><figure class="shot-card"><img src="screenshots/04-played.png" alt="Eight matches in — combo ×8, Fever just triggered. screenshot" loading="lazy" /><figcaption class="shot-caption"><span class="n">02</span><span>Eight matches in — combo ×8, Fever just triggered.</span></figcaption></figure></div>
+    <div class="shots-grid"><figure class="shot-card"><img src="screenshots/01-gameplay.png" alt="Opening round. Pot orders a lettuce; conveyor brings shrimp, chili, steak; two lives left after a couple of early misses. screenshot" loading="lazy" /><figcaption class="shot-caption"><span class="n">01</span><span>Opening round. Pot orders a lettuce; conveyor brings shrimp, chili, steak; two lives left after a couple of early misses.</span></figcaption></figure><figure class="shot-card"><img src="screenshots/02-combo.png" alt="Service over modal — final score, best combo, all-time high score, Cook again. screenshot" loading="lazy" /><figcaption class="shot-caption"><span class="n">02</span><span>Service over modal — final score, best combo, all-time high score, Cook again.</span></figcaption></figure></div>
   </section>
 
   <footer class="colophon">

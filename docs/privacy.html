@@ -32,13 +32,13 @@
       <p class="eyebrow">Scope</p>
       <h2>What data the app handles</h2>
       <p>The app only touches data you create or capture inside it.</p>
-      <ul><li><strong>High score</strong> and <strong>haptics setting</strong>.</li></ul>
+      <ul><li><strong>High score</strong> (best round you've cleared).</li><li><strong>Haptics setting</strong> (on/off).</li></ul>
     </section>
 
     <section>
       <p class="eyebrow">Storage</p>
       <h2>How that data is stored</h2>
-      <p>Both values live in AsyncStorage on your device. They never leave the phone.</p>
+      <p>Both values live in the app's sandboxed local storage on your device, using React Native's <span class="kbd">AsyncStorage</span>. They never leave your device.</p>
       <ul>
         <li>Deleting items from inside the app removes them permanently from your device.</li>
         <li>Uninstalling the app removes all stored data.</li>

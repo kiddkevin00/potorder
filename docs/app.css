@@ -4,17 +4,17 @@
   --bg:          #1a0e0c;
   --surface:     #231311;
   --ink:         #fef3ec;
-  --ink-muted:   #bda49a;
-  --ink-subtle:  #7a6258;
+  --ink-muted:   #c2a59a;
+  --ink-subtle:  #8a6e62;
   --rule:        #3a2823;
-  --rule-soft:   #2a1d18;
+  --rule-soft:   #2a1c18;
   --accent:      #d24a2a;
   --accent-deep: #8a2f1a;
   --accent-rgb:  210, 74, 42;
 
-  --font-display: 'Bree Serif', 'Iowan Old Style', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Bree Serif', Georgia, serif;
+  --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, Menlo, monospace;
 
   --shadow-card: 0 1px 2px rgba(0,0,0,0.05), 0 10px 24px -12px rgba(0,0,0,0.12);
   --measure: 40rem;
